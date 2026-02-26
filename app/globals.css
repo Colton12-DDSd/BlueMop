@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  @apply bg-white text-slate-900 antialiased;
+}
+
+.section-shell {
+  @apply mx-auto w-full max-w-6xl px-6 py-16 md:px-10;
+}
+
+.panel {
+  @apply rounded-xl border border-slate-200 bg-white shadow-panel;
+}
