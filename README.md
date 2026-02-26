@@ -44,3 +44,8 @@ Edit the logo mark and wordmark in:
 - `components/logo.tsx`
 
 You can swap the inline SVG icon, text styling, or both.
+
+
+### Vercel output directory note
+
+If your Vercel project is configured with a custom Output Directory (for example `public`), set it to `out` to match Next.js static export output from this repo.
