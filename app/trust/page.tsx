@@ -68,7 +68,7 @@ export default function TrustCenterPage() {
 
       <section className="panel p-6">
         <h2 className="text-xl font-semibold text-slate-900">Policies</h2>
-        <div className="mt-3 flex gap-4 text-sm font-medium text-slateBlue">
+        <div className="mt-3 flex gap-4 text-sm font-medium text-accentBlue">
           <Link href="/trust/security" className="hover:underline">
             Security Policy
           </Link>

@@ -14,16 +14,31 @@ export const metadata: Metadata = {
 const serviceCards = [
   {
     title: 'After-Hours Reset',
-    text: 'Nightly operational resets aligned to occupancy windows and next-day readiness requirements.'
+    text: 'Nightly coverage windows restore high-traffic areas and shared workspaces before occupancy resumes.'
   },
   {
     title: 'Access-Controlled Cleaning',
-    text: 'Credential-aware service routines for restricted zones, ensuring approved entry and traceability.'
+    text: 'Credential-aware procedures are aligned to approved routes, escorts, and controlled entry requirements.'
   },
   {
     title: 'Standardized Checklists',
-    text: 'Repeatable procedures and site-specific scope control for consistent outcomes across locations.'
+    text: 'Site checklists define task scope, quality thresholds, and handoff points for consistent service output.'
   }
+];
+
+const siteTypes = [
+  { name: 'Offices', icon: '▦' },
+  { name: 'Controlled Rooms', icon: '◫' },
+  { name: 'Executive Floors', icon: '▤' },
+  { name: 'Multi-Tenant Buildings', icon: '▧' }
+];
+
+const serviceLogRows = [
+  ['22:04', 'North Tower L2', 'Checklist A-12', 'Completed'],
+  ['22:37', 'Executive Corridor', 'Touchpoint reset', 'Completed'],
+  ['23:09', 'NOC Perimeter', 'Restricted sweep', 'Completed'],
+  ['23:42', 'Dock & Receiving', 'Spill response', 'Closed'],
+  ['00:11', 'South Lobby', 'Glass + floor pass', 'Completed']
 ];
 
 export default function HomePage() {
@@ -32,15 +47,18 @@ export default function HomePage() {
       <section className="section-shell py-20">
         <p className="text-sm font-medium uppercase tracking-[0.16em] text-slate-600">{tagline}</p>
         <h1 className="mt-4 max-w-3xl text-4xl font-semibold leading-tight text-slate-900 md:text-5xl">
-          Facility operations that run cleanly, quietly, and consistently.
+          Facilities coverage built for consistency across every shift.
         </h1>
         <p className="mt-6 max-w-3xl text-lg text-slate-700">{positioning}</p>
         <div className="mt-8 flex flex-wrap gap-3">
-          <Link href="/contact" className="rounded-md bg-slateBlue px-5 py-3 text-sm font-medium text-white hover:opacity-90">
-            Request Coverage Review
+          <Link href="/contact" className="rounded-md bg-accentBlue px-5 py-3 text-sm font-medium text-white hover:opacity-90">
+            Request Coverage
           </Link>
-          <Link href="/services" className="rounded-md border border-slate-300 px-5 py-3 text-sm font-medium text-slate-800 hover:bg-slate-100">
-            Explore Service Programs
+          <Link href="/contact" className="rounded-md border border-slate-300 px-5 py-3 text-sm font-medium text-slate-800 hover:bg-slate-100">
+            Get a Service Quote
+          </Link>
+          <Link href="/contact" className="rounded-md border border-slate-300 px-5 py-3 text-sm font-medium text-slate-800 hover:bg-slate-100">
+            Add a Site
           </Link>
         </div>
       </section>
@@ -58,6 +76,22 @@ export default function HomePage() {
 
       <section className="section-shell pt-0">
         <div className="panel p-8">
+          <h2 className="text-2xl font-semibold text-slate-900">Site Types</h2>
+          <div className="mt-5 grid gap-4 text-sm text-slate-700 md:grid-cols-4">
+            {siteTypes.map((site) => (
+              <div key={site.name} className="rounded-lg border border-slate-200 bg-white p-4">
+                <p className="text-xl text-accentBlue" aria-hidden="true">
+                  {site.icon}
+                </p>
+                <p className="mt-2 font-medium text-slate-900">{site.name}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section-shell pt-0">
+        <div className="panel p-8">
           <h2 className="text-2xl font-semibold text-slate-900">How it works</h2>
           <div className="mt-5 grid gap-4 text-sm text-slate-700 md:grid-cols-3">
             <div>
@@ -66,12 +100,35 @@ export default function HomePage() {
             </div>
             <div>
               <p className="font-medium text-slate-900">2. Coverage</p>
-              <p className="mt-2">Teams execute checklist-based service routines aligned to your defined standards.</p>
+              <p className="mt-2">Teams execute checklist-based routines tied to floor plans and occupancy cutoffs.</p>
             </div>
             <div>
-              <p className="font-medium text-slate-900">3. Reporting</p>
-              <p className="mt-2">Completion logs and variance notes are delivered in a clean, operationally useful format.</p>
+              <p className="font-medium text-slate-900">3. Service Logs</p>
+              <p className="mt-2">Timestamped service logs capture completion status, variances, and shift close notes.</p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-shell pt-0">
+        <div className="panel p-8">
+          <h2 className="text-2xl font-semibold text-slate-900">Service Log Preview</h2>
+          <p className="mt-2 text-sm text-slate-600">Example overnight report card for one active coverage window.</p>
+          <div className="mt-5 overflow-hidden rounded-lg border border-slate-200">
+            <div className="grid grid-cols-4 bg-slate-50 px-4 py-3 text-xs font-semibold uppercase tracking-wider text-slate-600">
+              <p>Time</p>
+              <p>Zone</p>
+              <p>Task</p>
+              <p>Status</p>
+            </div>
+            {serviceLogRows.map((row) => (
+              <div key={row.join('-')} className="grid grid-cols-4 border-t border-slate-200 px-4 py-3 text-sm text-slate-700">
+                <p className="font-mono text-xs text-slate-600">{row[0]}</p>
+                <p>{row[1]}</p>
+                <p>{row[2]}</p>
+                <p className="font-medium text-accentBlue">{row[3]}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

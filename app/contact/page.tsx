@@ -19,7 +19,7 @@ export default function ContactPage() {
             Share your site profile and service goals. We&apos;ll return a recommended coverage model tailored to your operating windows.
           </p>
           <p className="mt-6 text-sm text-slate-700">
-            Direct contact: <a className="font-medium text-slateBlue hover:underline" href="mailto:contact@bluemop.example">contact@bluemop.example</a>
+            Direct contact: <a className="font-medium text-accentBlue hover:underline" href="mailto:contact@bluemop.example">contact@bluemop.example</a>
           </p>
         </section>
 
@@ -45,7 +45,7 @@ export default function ContactPage() {
               <label htmlFor="message" className="text-sm font-medium text-slate-800">Message</label>
               <textarea id="message" rows={4} className="mt-1 w-full rounded-md border border-slate-300 px-3 py-2 text-sm" />
             </div>
-            <button type="button" className="rounded-md bg-slateBlue px-4 py-2 text-sm font-medium text-white">Submit Request (UI only)</button>
+            <button type="button" className="rounded-md bg-accentBlue px-4 py-2 text-sm font-medium text-white">Submit Request (UI only)</button>
           </form>
         </section>
       </div>

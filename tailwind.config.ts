@@ -5,7 +5,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        slateBlue: '#0A1E32',
+        accentBlue: '#345A7D',
         mist: '#F4F7FA'
       },
       boxShadow: {

@@ -21,7 +21,7 @@ export default function PartnersPage() {
           <article key={partner.name} className="panel p-6">
             <h2 className="text-xl font-semibold text-slate-900">{partner.name}</h2>
             <p className="mt-2 text-sm text-slate-700">“{partner.tagline}”</p>
-            <Link href={partner.href} className="mt-4 inline-block text-sm font-medium text-slateBlue hover:underline">
+            <Link href={partner.href} className="mt-4 inline-block text-sm font-medium text-accentBlue hover:underline">
               Visit partner profile
             </Link>
           </article>
