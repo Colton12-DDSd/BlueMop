@@ -20,7 +20,7 @@ Production-ready static marketing site for **BlueMop Facility Services** built w
 npm run build
 ```
 
-This project uses `output: 'export'` in `next.config.ts` for static output and zero-config Vercel deployment.
+This project uses `output: 'export'` in `next.config.mjs` for static output and zero-config Vercel deployment.
 
 ## Deploy to Vercel
 
